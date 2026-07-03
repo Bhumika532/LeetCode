@@ -6,7 +6,6 @@ class Solution {
             arrsum+=nums[i];
         }
         int orgsum=n*(n+1)/2;
-        int missing=orgsum-arrsum;
-        return missing;
+        return orgsum-arrsum;
     }
 }
