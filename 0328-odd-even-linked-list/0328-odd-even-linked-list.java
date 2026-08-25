@@ -10,11 +10,11 @@
  */
 class Solution {
     public ListNode oddEvenList(ListNode head) {
-        if(head==null) return null;
+        if(head==null || head.next==null) return head;
         ListNode temp=head;
-        ListNode evenhead=null, eventail=null;
-        ListNode oddhead=null, oddtail=null;
         int pos=1;
+        ListNode oddhead=null,oddtail=null;
+        ListNode evenhead=null, eventail=null;
         while(temp!=null){
             if(pos%2==0){
                 if(evenhead==null){
@@ -27,7 +27,7 @@ class Solution {
             }
             else{
                 if(oddhead==null){
-                    oddhead=oddtail=temp;
+                    oddtail=oddhead=temp;
                 }
                 else{
                     oddtail.next=temp;
@@ -37,9 +37,8 @@ class Solution {
             pos++;
             temp=temp.next;
         }
-        if(eventail!=null) eventail.next=null;
-        if(oddtail!=null) oddtail.next=null;
         oddtail.next=evenhead;
+        eventail.next=null;
         return oddhead;
     }
 }
