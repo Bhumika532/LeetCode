@@ -17,15 +17,16 @@ public class Solution {
             if(p==null){
                 p=headB;
             }
+            else{
+                p=p.next;
+            }
             if(q==null){
                 q=headA;
             }
-            p=p.next;
-            q=q.next;
+            else{
+                q=q.next;
+            }
         }
-        if(p==q){
-            return p;
-        }
-        return null;
+        return p;
     }
 }
