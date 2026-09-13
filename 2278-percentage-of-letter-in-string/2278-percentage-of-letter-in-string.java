@@ -7,7 +7,6 @@ class Solution {
                 n++;
             }
         }
-        int len=s.length();
-        return n*100/len;
+        return n*100/s.length();
     }
 }
